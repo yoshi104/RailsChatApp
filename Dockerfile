@@ -1,4 +1,4 @@
-FROM ruby:2.3.7
+FROM ruby:2.5.0
 ENV LANG C.UTF-8
 ENV APP_ROOT /monthly_report
 
