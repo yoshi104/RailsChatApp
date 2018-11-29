@@ -12,5 +12,6 @@ Rails.application.routes.draw do
  # get 'index' => redirect('')
  # get 'layouts/chatView'
  # root to: 'layouts#chatView'
-
+ get 'login' => 'login#index'
+ get 'logout' => 'logout#index'
 end
