@@ -7,7 +7,16 @@
     <p><%= @chatview %></p>
 </head>
 
-<body>
+<div id='chat_messages'>
+</div>
+<br/>
+<form>
+  <label>
+    発言する: <input type="text" data-behavior="speak_chat_messages">
+  </label>
+</form>
+
+<%# <body>
     <!--自分やユーザの情報-->
     <h3 id="me" user_id="1">あなたはユーザー１です</h3>
     <h3 id="partner" thread_id="1">相手</h3>
@@ -65,3 +74,5 @@
     </div>
 </body>
 </html>
+
+ %>
