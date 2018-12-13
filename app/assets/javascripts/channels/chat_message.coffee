@@ -13,7 +13,7 @@ App.chat_message = App.cable.subscriptions.create "ChatMessageChannel",
     @perform 'speak', message: message
   
   $(document).on 'keypress', '[date-behavior~=speak_chat_messages]',(event) ->
-    if event.keyCode is 13
-      App.chat_message.speak event.target.value
-      event.target.value = ''
-      event.preventDefault()
+  if event.keyCode is 13
+    App.chat_message.speak event.target.value
+    event.target.value = ''
+    event.preventDefault()
