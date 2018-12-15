@@ -8,14 +8,18 @@
 <body>
 <div id="form">
     <p class="form-title">Login</p>
-    <form action="post">
+    <%= form_tag('session_create') do %>
         <p>Username</p>
-        <p class="username"><input type="text" name="username" maxlength="32" autocomplete="OFF" /></p>
+        <p class="username"><input type="text" name="name" maxlength="32" autocomplete="OFF" /></p>
         <p>Password</p>
         <p class="password"><input type="password" name="password" maxlength="32" autocomplete="OFF" /></p>
-        <p class="check"><input type="checkbox" name="checkbox" />パスワードを保存</p>
         <p class="submit"><input type="submit" value="Enter" /></p>
-    </form>
+    <%end%>
 </div>
+<% if session[:user_id]%>
+<%= session[:user_id]%>
+<%= User.find_by_id(session[:user_id]).user_name%>
+<%= link_to 'ログアウト', 'session_destroy' %>
+<%end%>
 </body>
 </html>

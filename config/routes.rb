@@ -14,4 +14,6 @@ Rails.application.routes.draw do
  # root to: 'layouts#chatView'
  get 'login' => 'login#index'
  get 'logout' => 'logout#index'
+ post 'session_create' => 'sessions#create'
+ get 'session_destroy' => 'sessions#destroy'
 end
