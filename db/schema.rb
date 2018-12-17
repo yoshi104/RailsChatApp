@@ -10,11 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_12_07_085808) do
 
   create_table "chat_messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.text "body"
+=======
+ActiveRecord::Schema.define(version: 2018_12_15_103825) do
+
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "user_name"
+    t.string "password"
+>>>>>>> 1978ce721fea2570fe4dff8a74c5c4ae17191111
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
