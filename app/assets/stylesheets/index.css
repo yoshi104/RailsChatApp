@@ -1,8 +1,8 @@
 #your_container{
     /*bms_message_containerの方で、縦横いっぱいに広がってくれるので、
     ここで充てた高さと横幅がそのままスタイルになる仕組み*/
-    height:600px;
-    width: 50%;
+    height:100%;
+    width: 100%;
 }
 
 /*チャットの外側部分①*/
@@ -104,11 +104,11 @@
         height: 48px;
         padding: 4px;
     }
-        #bms_send_message {
+        #chat_speak {
             width: calc(100% - 75px); /*常に送信ボタンの横幅を引いたサイズに動的に計算*/
             line-height: 16px;
             height: 48px;
-            padding: 14px 6px 0px 6px; /*文字がテキストエリアの中心になるように隙間調整*/
+            /* padding: 14px 6px 0px 6px; *//*文字がテキストエリアの中心になるように隙間調整*/
             border: 1px solid #ccc;
             border-radius: 4px; /*角丸*/
             text-align: left; /*文字を左寄せ*/

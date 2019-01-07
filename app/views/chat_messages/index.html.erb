@@ -7,19 +7,7 @@
     <p><%= @chatview %></p>
 </head>
 
-<div id='chat_messages'>
-  <% @chat_messages.each do |chat_message| %>
-    <div><%=chat_message.body %></div>
-    <% end %>
-</div>
-<br/>
-<form>
-  <label>
-    発言する: <input id="chat_speak" type="text" data-behavior="speak_chat_messages">
-  </label>
-</form>
-
-<%# <body>
+<body>
     <!--自分やユーザの情報-->
     <h3 id="me" user_id="1">あなたはユーザー１です</h3>
     <h3 id="partner" thread_id="1">相手</h3>
@@ -45,16 +33,17 @@
 
             <!-- タイムライン部分③ -->
             <div id="bms_messages">
-
+                <% @chat_messages.each do |chat_message| %>
                 <!-- メッセージ１（左側）-->
                 <div class="bms_message bms_left">
                     <div class="bms_message_box">
                         <div class="bms_message_content">
-                            <div class="bms_message_text">オーストラリア行きたい</div>
+                            <div class="bms_message_text"><%=chat_message.body %></div>
                         </div>
                     </div>
                 </div>
                 <div class="bms_clear"></div><!-- 回り込みを解除（スタイルはCSSで充てる）-->
+                <% end %>
 
                 <!-- メッセージ２（右側）-->
                 <div class="bms_message bms_right">
@@ -70,12 +59,14 @@
 
             <!-- テキストボックス、送信ボタン④ -->
             <div id="bms_send">
-                <textarea id="bms_send_message"></textarea>
-                <div id="bms_send_btn">送信</div>
+              <form>
+                  <input id="chat_speak" type="text" data-behavior="speak_chat_messages">
+                  <div id="bms_send_btn">送信</div>
+              </form>
+                
             </div>
         </div>
     </div>
 </body>
 </html>
 
- %>
