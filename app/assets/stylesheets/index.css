@@ -17,7 +17,7 @@
     padding: 6px; /*隙間調整*/
     font-size: 16px;
     height: 34px;
-    background: #ddd;
+    background: #13178E;
     border: 1px solid #ccc;
 }
 
@@ -29,12 +29,14 @@
     #bms_status_icon {
         float: left; /*bms_chat_user_statusに対して左寄せ*/
         line-height: 2em; /*高さ調整*/
+        color: #fff; /*マークの色*/
     }
     /*ユーザー名*/
     #bms_chat_user_name {
         float: left; /*bms_chat_user_statusに対して左寄せ*/
         line-height: 2em; /*高さ調整*/
         padding-left: 8px;
+        color: #fff; /*マークの色*/
     }
 
 /*タイムライン部分*/
@@ -73,7 +75,7 @@
             background: #fff;
             border: 2px solid #13178E;
             border-radius: 30px 30px 30px 0px; /*上下だけ尖らせてｂ吹き出し感を出す*/
-            margin-right: 50px; /*左側の発言だとわかるように、吹き出しｍ技側に隙間を入れる*/
+            margin-right: 50px; /*左側の発言だとわかるように、吹き出し右側に隙間を入れる*/
         }
 
     /* メッセージ２（右側） */
@@ -131,6 +133,6 @@
         box-sizing: border-box; /**paddingとborderの要素と幅の影響をなくす（要素に高さと幅を含める）*/
     }
     #bms_send_btn:hover {
-        background: #13178E; /*マウスｐ＠おインタを当てた時にアクティブな色になる*/
+        background: #13178E; /*マウスポインタを当てた時にアクティブな色になる*/
         cursor: pointer; /*マウスポインタを当てたときに、カーソルの色が指の形になる*/
     }
