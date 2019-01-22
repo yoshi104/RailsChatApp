@@ -4,7 +4,7 @@ App.chat = App.cable.subscriptions.create("ChatMessageChannel",{
   disconnected: function(){
   },
   received: function(data){
-      return $('#chat_messages').append('<li>'+data.user_name, +data.message+'</li>');
+      return $('#bms_messages').append('<div class="bms_message bms_left"><div class="bms_message_box"><div class="bms_message_content"><div class="bms_message_text">'+data.message+'</div></div></div></div><div class="bms_clear"></div>');
   },
   speak: function(message, user_id){
       return this.perform('speak', { message: message, user_id: user_id});
