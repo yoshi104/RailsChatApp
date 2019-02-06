@@ -63,6 +63,13 @@
                 padding: 20px; /*文字や画像（コンテンツ）の外側に隙間を入れる*/
             }
 
+    /* 左側の吹き出し上の相手のユーザーid */
+    .message_partner {
+        padding: 0 14px;
+        font-size: 12pt;
+        margin-left: 15.5pt;
+    }
+
     /* メッセージ１（左側） */
     .bms_left {
         float: left; /*吹き出しをbms_messagesに対して左寄せ*/

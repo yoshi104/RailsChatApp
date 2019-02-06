@@ -46,6 +46,7 @@
                     <div class="bms_clear"></div><!-- 回り込みを解除（スタイルはCSSで充てる）-->
                     <% else %>
                     <!-- メッセージ１（左側）-->
+                    <div class="message_partner"><%=chat_message.user_id%></div>
                     <div class="bms_message bms_left">
                         <div class="bms_message_box">
                             <div class="bms_message_content">
@@ -56,22 +57,18 @@
                     <div class="bms_clear"></div><!-- 回り込みを解除（スタイルはCSSで充てる）-->
                     <% end %>
                 <% end %>
-                
-
-
             </div>
 
             <!-- テキストボックス、送信ボタン④ -->
             
             <div id="bms_send">
-              <form>
+              <%# <form> %>
                 <label> 
                   <input id="chat_speak" type="text" name="message" data-behavior="speak_chat_messages">
                   <input id="user_id" type="hidden" name="user_id" data-behavior="speak_chat_messages" value=<%= @_current_user.user_name %>>
-                  <!--ここにログインしているuser_idをいれてフォームを送信できるようにする -->
                   <div id="bms_send_btn">送信</div>
                 </label>
-              </form>
+              <%# </form> %>
             </div>
         </div>
     </div>
