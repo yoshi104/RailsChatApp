@@ -9,7 +9,7 @@ App.chat = App.cable.subscriptions.create("ChatMessageChannel",{
       if( data.user_id == $('#user_id').val() ){
       return $('#bms_messages').append('<div class="bms_message bms_right"><div class="bms_message_box"><div class="bms_message_content"><div class="bms_message_text">'+data.message+'</div></div></div></div><div class="bms_clear"></div>');
       } else {
-      return $('#bms_messages').append('<div class="bms_message bms_left"><div class="bms_message_box"><div class="bms_message_content"><div class="bms_message_text">'+data.message+'</div></div></div></div><div class="bms_clear"></div>');
+      return $('#bms_messages').append('<div class="message_partner">'+data.user_id+'</div><div class="bms_message bms_left"><div class="bms_message_box"><div class="bms_message_content"><div class="bms_message_text">'+data.message+'</div></div></div></div><div class="bms_clear"></div>');
       }
   },
   speak: function(message, user_id){

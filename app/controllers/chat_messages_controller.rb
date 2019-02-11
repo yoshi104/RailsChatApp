@@ -4,19 +4,28 @@ class ChatMessagesController < ApplicationController
         @chat_messages = ChatMessage.all #chat　messageをdbから取得
         @userid = session[:user_id]
         
-        puts 'セッション'
-        puts session[:user_id]
+        puts '######'
+        puts @userid
+        puts '#####'
 
-        @chat_messages.each { |message| 
+        if @userid == nil
+            redirect_to('/login')
+        else
+            puts 'セッション'
+            puts session[:user_id]
+
+             @chat_messages.each { |message| 
             puts message.user_id
             puts message.body
             puts "+++"
-        }
+            }
 
-        puts "current user"
-        puts current_user.user_name
+             puts "current user"
+             puts current_user.user_name
 
-        @_current_user ||= User.find_by(id: session[:user_id])
+
+             @_current_user ||= User.find_by(id: session[:user_id])
+        end      
 
     end
 
