@@ -21,16 +21,17 @@
         <div id="bms_messages_container">
             <!-- ヘッダー部分② -->
             <div id="bms_chat_header">
+              <%# <div id="bms_chat_header_bk"> %>
                 <!-- ステータス -->
                 <div id="bms_chat_user_status">
                     <!-- ステータスアイコン -->
                     <div id="bms_status_icon">●</div>
                     <!-- ユーザー名 -->
-                    <div id="bms_chat_user_name">ユーザー</div>
+                    <div id="bms_chat_user_name"><%= @_current_user.user_name %></div>
                 </div>
+              </div>
             </div>
-
-
+  
             <!-- タイムライン部分③ -->
             <div id="bms_messages">
                 <% @chat_messages.each do |chat_message| %>
@@ -62,6 +63,7 @@
             <!-- テキストボックス、送信ボタン④ -->
             
             <div id="bms_send">
+            <div>
               <%# <form> %>
                 <label> 
                   <input id="chat_speak" type="text" name="message" data-behavior="speak_chat_messages">

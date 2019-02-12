@@ -1,3 +1,9 @@
+#header{
+    position: fixed; 
+    height: 50px;
+    width: 100%;
+}
+
 #your_container{
     /*bms_message_containerの方で、縦横いっぱいに広がってくれるので、
     ここで充てた高さと横幅がそのままスタイルになる仕組み*/
@@ -14,12 +20,21 @@
 
 /*ヘッダー部分②*/
 #bms_chat_header {
-    padding: 6px; /*隙間調整*/
+    /* padding: 6px; /*隙間調整*/
     font-size: 16px;
     height: 34px;
+    width: 100%;
     background: #ddd;
     border: 1px solid #ccc;
+    position: fixed;
 }
+
+/* #bms_chat_header_bk {
+    background: #ddd;
+    padding :10px 0 20px;
+    height: 34px;
+    width: 100%;
+} */
 
     /*ステータスマークとユーザー名*/
     #bms_chat_user_status {
@@ -138,6 +153,6 @@
         box-sizing: border-box; /**paddingとborderの要素と幅の影響をなくす（要素に高さと幅を含める）*/
     }
     #bms_send_btn:hover {
-        background: #13178E; /*マウスｐ＠おインタを当てた時にアクティブな色になる*/
+        background: #13178E; /*マウスポインタｃを当てた時にアクティブな色になる*/
         cursor: pointer; /*マウスポインタを当てたときに、カーソルの色が指の形になる*/
     }

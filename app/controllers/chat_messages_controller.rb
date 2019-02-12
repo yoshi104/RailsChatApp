@@ -1,32 +1,31 @@
 class ChatMessagesController < ApplicationController
     def index
-      
-        @chat_messages = ChatMessage.all #chat　messageをdbから取得
-        @userid = session[:user_id]
-        
-        puts '######'
-        puts @userid
-        puts '#####'
 
-        if @userid == nil
+        p '#######'
+        p defined? session[:user_id]
+        p '#######'
+      
+        
+        # session[:user_id]が定義されているか判定（ログインされているか否か）
+        if (defined? session[:user_id]) == nil
             redirect_to('/login')
         else
             puts 'セッション'
             puts session[:user_id]
 
-             @chat_messages.each { |message| 
+            #chat　messageをdbから取得
+            @chat_messages = ChatMessage.all 
+
+            @chat_messages.each { |message| 
             puts message.user_id
             puts message.body
             puts "+++"
             }
 
-             puts "current user"
-             puts current_user.user_name
-
-
-             @_current_user ||= User.find_by(id: session[:user_id])
-        end      
-
+            puts "current user"
+            puts current_user.user_name
+            current_user
+        end
     end
 
   private
