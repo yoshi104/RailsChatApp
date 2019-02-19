@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'test' => 'test#index'
  resources :chat_messages
  root to: 'chat_messages#index'
  get 'chat_messages' => redirect('')

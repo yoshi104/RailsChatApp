@@ -20,6 +20,11 @@ App.chat = App.cable.subscriptions.create("ChatMessageChannel",{
     var user_id = $('#user_id');
     App.chat.speak(chatForm.val(), user_id.val(),);
     $('#chat_speak').val('');
+
+    // メッセージ送信時に画面下部に自動スクロール（aタグへとばす）
+    var a = $('a').offset().top;
+    $('html, body').animate({scrollTop:a});
+
     return;
 })
 , $(document).on('keypress', '[data-behavior~=speak_chat_messages]', function(event) {
@@ -28,7 +33,12 @@ App.chat = App.cable.subscriptions.create("ChatMessageChannel",{
         var user_id = $('#user_id');
         App.chat.speak(chatForm.val(), user_id.val(),);
         $('#chat_speak').val('');
+
+        // メッセージ送信時に画面下部に自動スクロール（aタグへとばす）
+        var a = $('a').offset().top;
+        $('html, body').animate({scrollTop:a});
+
         return;
     }
-  })
+ })
 );

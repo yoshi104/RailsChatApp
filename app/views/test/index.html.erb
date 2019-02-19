@@ -1,0 +1,57 @@
+
+<div id="header-fixed">
+    <div id="header-bk">
+        <div id="header">
+            <h3 id="me" user_id="1"><%= @_current_user.user_name %></h3>
+            <button type="button" id="logout_btn">logout</button>
+        </div>
+    </div>
+</div>
+<div id="body-bk">
+    <div id="body">
+        <div id="bms_messages">
+            <% @chat_messages.each do |chat_message| %>
+                <% if @_current_user.user_name == chat_message.user_id then %>
+                <!-- メッセージ２（右側）-->
+                <div class="bms_message bms_right">
+                    <div class="bms_message_box">
+                        <div class="bms_message_content">
+                            <div class="bms_message_text"><%=chat_message.body%></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bms_clear"></div><!-- 回り込みを解除（スタイルはCSSで充てる）-->
+                <% else %>
+                <!-- メッセージ１（左側）-->
+                <div class="message_partner"><%=chat_message.user_id%></div>
+                <div class="bms_message bms_left">
+                    <div class="bms_message_box">
+                        <div class="bms_message_content">
+                            <div class="bms_message_text"><%=chat_message.body %></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bms_clear"></div><!-- 回り込みを解除（スタイルはCSSで充てる）-->
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+</div>
+<a></a>
+<div id="footer-fixed">
+    <div id="footer-bk">
+        <div id="footer">
+        <!-- テキストボックス、送信ボタン④ -->
+            <div id="bms_send">
+            <div>
+              <%# <form> %>
+                <label> 
+                  <input id="chat_speak" type="text" name="message" data-behavior="speak_chat_messages">
+                  <input id="user_id" type="hidden" name="user_id" data-behavior="speak_chat_messages" value=<%= @_current_user.user_name %>>
+                  <div id="bms_send_btn">送信</div>
+                </label>
+              <%# </form> %>
+            </div>
+        </div>
+    </div>
+</div>
