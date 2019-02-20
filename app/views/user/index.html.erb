@@ -1,6 +1,6 @@
 <div id="form">
-    <p class="form-title">Login</p>
-    <%= form_tag('session_create') do %>
+    <p class="form-title">User Registration</p>
+    <%= form_tag('user_register') do %>
         <%= @error if @error.present?%>
         <p>Username</p>
         <p class="username"><input type="text" name="name" maxlength="32" autocomplete="OFF" /></p>
@@ -9,4 +9,8 @@
         <p class="submit"><input type="submit" value="Enter" /></p>
     <%end%>
 </div>
-<%= link_to 'ユーザー登録', 'user' %>
+<% if session[:user_id]%>
+<%= session[:user_id]%>
+<%= User.find_by_id(session[:user_id]).user_name%>
+<%= link_to 'ログアウト', 'session_destroy' %>
+<%end%>

@@ -151,3 +151,72 @@
         background: #13178E; /*マウスポインタｃを当てた時にアクティブな色になる*/
         cursor: pointer; /*マウスポインタを当てたときに、カーソルの色が指の形になる*/
     }
+
+    html, body{
+        margin: 0;         /* 余白の削除 */
+        padding: 0;        /* 余白の削除 */
+        width:100%;
+        height:100%;
+    }
+    
+    /* ヘッダーの固定 */
+    div#header-fixed
+    {
+        position: fixed;            /* ヘッダーの固定 */
+        top: 0px;                   /* 位置(上0px) */
+        left: 0px;                  /* 位置(右0px) */
+        width: 100%;                /* 横幅100%　*/
+        height: 80px;              /* 縦幅140px */
+    }
+     
+     
+    div#header-bk { 
+        background-color:#444;     /* 背景色(黒) */
+        padding:10px 0 20px;       /* 上10px、下20pxをあける */
+        height:100%;              /* 縦の高さ110px */
+        width:100%;                /* 横の幅を100% */
+    }
+     
+     
+    div#header { 
+        height: 100%;              /* 縦の表示領域はheader-bkと同じ */
+        width: 100%;              /* 横の幅970px */
+        margin: auto;              /* 中央揃え */
+    }
+    
+    /* フッターの固定 */
+    div#footer-fixed
+    {
+        position: fixed;            /* フッターの固定 */
+        bottom: 0px;                /* 位置(下0px) */
+        left: 0px;                  /* 位置(左0px) */
+        width: 100%;                /* 横幅100%　*/
+        height: 80px;              /* 縦幅140px */
+    }
+     
+    div#footer-bk
+    {
+        background-color:#444;     /* 背景色(黒) */
+        padding:10px 0 20px;       /* 上10px、下20pxをあける */
+        height:100%;              /* 縦の高さ140px */
+        width:100%;                /* 横の幅を100% */
+    }
+     
+    div#footer { 
+        height: 100%;              /* 縦の表示領域はheader-bkと同じ */
+        width: 100%;              /* 横の幅970px */
+        margin: auto;              /* 中央揃え */
+    }
+    
+    /* ボディの定義 */
+    div#body-bk{
+        padding:80px 0 80px 0;    /* 上下に160pxを余白を取る */
+        background-color: #eee;
+    }
+     
+    div#body{
+        width:100%;
+        margin:auto;
+    }
+    
+    

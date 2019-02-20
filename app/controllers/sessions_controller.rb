@@ -6,13 +6,14 @@ class SessionsController < ApplicationController
 						session[:user_id] = user.id
 						redirect_to('/index')
 				else
-						redirect_to('/login')
+					@error="login missing"	
+					render('login/index')
 				end
 	end
 
 	def destroy
 				session[:user_id] = nil
-				redirect_to('/logout')
+				redirect_to('/login')
 	end
 end
 
