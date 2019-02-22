@@ -12,23 +12,6 @@
     background-color: #eee;
 }
 
-/* ヘッダー部分②
-#bms_chat_header {
-    /* padding: 6px; /*隙間調整*/
-    /* font-size: 16px;
-    height: 34px;
-    background: #053352;
-    border: 1px solid #ccc;
-    position: fixed;
-} */ 
-
-/* #bms_chat_header_bk {
-    background: #ddd;
-    padding :10px 0 20px;
-    height: 34px;
-    width: 100%;
-} */
-
     /*ステータスマークとユーザー名*/
     #bms_chat_user_status {
         float: left; /*bms_chat_headerに対して左寄せ*/
@@ -161,7 +144,7 @@
             right: -31px;
             margin-top: -14px;
             border: 14px solid transparent;
-            border-left: 14px solid #fff;
+            border-left: 14px;
             z-index: 1; /*要素の重なり順を決めるプロパティ*/
             }
 

@@ -6,14 +6,6 @@ Rails.application.routes.draw do
  get 'index' => redirect('')
  get 'user' => 'user#index'
  post 'user_register' => 'user#register'
- 
- # get 'chats' => redirect('')
- # get '' => 'top/layouts#chatView'
- # get 'detail' => 'detailpage#chatView'
- # get 'top' => redirect('')
- # get 'index' => redirect('')
- # get 'layouts/chatView'
- # root to: 'layouts#chatView'
  get 'login' => 'login#index'
  get 'logout' => 'logout#index'
  post 'session_create' => 'sessions#create'

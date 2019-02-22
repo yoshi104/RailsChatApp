@@ -21,7 +21,7 @@ App.chat = App.cable.subscriptions.create("ChatMessageChannel",{
     App.chat.speak(chatForm.val(), user_id.val(),);
     $('#chat_speak').val('');
 
-    // メッセージ送信時に画面下部に自動スクロール（aタグへとばす）
+    // メッセージ送信時に画面下部に自動スクロール
     $('html, body').animate({
         scrollTop: $(document).height()
       },100);
@@ -35,7 +35,7 @@ App.chat = App.cable.subscriptions.create("ChatMessageChannel",{
         App.chat.speak(chatForm.val(), user_id.val(),);
         $('#chat_speak').val('');
 
-        // メッセージ送信時に画面下部に自動スクロール（aタグへとばす）
+        // メッセージ送信時に画面下部に自動スクロール
         $('html, body').animate({
             scrollTop: $(document).height()
           },100);
