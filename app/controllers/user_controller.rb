@@ -8,7 +8,7 @@ class UserController < ApplicationController
         if user.save
             redirect_to('/login')
         else
-            @error='登録に失敗しました'
+            @error='Registration failure'
             render('user/index')
         end
     end

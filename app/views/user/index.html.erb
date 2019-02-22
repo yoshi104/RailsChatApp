@@ -9,8 +9,4 @@
         <p class="submit"><input type="submit" value="Enter" /></p>
     <%end%>
 </div>
-<% if session[:user_id]%>
-<%= session[:user_id]%>
-<%= User.find_by_id(session[:user_id]).user_name%>
-<%= link_to 'ログアウト', 'session_destroy' %>
-<%end%>
+
