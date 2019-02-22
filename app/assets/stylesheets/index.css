@@ -17,8 +17,7 @@
     /* padding: 6px; /*隙間調整*/
     /* font-size: 16px;
     height: 34px;
-    width: 100%;
-    background: #ddd;
+    background: #053352;
     border: 1px solid #ccc;
     position: fixed;
 } */ 
@@ -38,12 +37,14 @@
     #bms_status_icon {
         float: left; /*bms_chat_user_statusに対して左寄せ*/
         line-height: 2em; /*高さ調整*/
+        color: #fff; /*マークの色*/
     }
     /*ユーザー名*/
     #bms_chat_user_name {
         float: left; /*bms_chat_user_statusに対して左寄せ*/
         line-height: 2em; /*高さ調整*/
         padding-left: 8px;
+        color: #fff; /*マークの色*/
     }
 
 /*タイムライン部分*/
@@ -51,10 +52,15 @@
     margin: 10px;
     overflow: auto; /*スクロールを効かせつつ、メッセージがタイムラインの外に出ないようにする*/
     height:100%;/*テキストエリアが下に張り付くようにする*/
-    /* border-right: 1px solid #ddd; 
-    border-left: 1px solid #ddd; */
-    /* background-color: #eee; */
-    /* box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2) inset; /*ヘッダーの下に影を入れる*/
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    background: rgba(226,226,226,1);/*以下、各ブラウザ対応仕様で背景をグラデーション化*/
+    background: -moz-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 22%, rgba(95,115,245,1) 49%, rgba(254,254,254,1) 100%);
+    background: -webkit-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 22%, rgba(95,115,245,1) 49%, rgba(254,254,254,1) 100%);
+    background: -o-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 22%, rgba(95,115,245,1) 49%, rgba(254,254,254,1) 100%);
+    background: -ms-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 22%, rgba(95,115,245,1) 49%, rgba(254,254,254,1) 100%);
+    background: linear-gradient(to right, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 22%, rgba(95,115,245,1) 49%, rgba(254,254,254,1) 100%);
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2) inset; /*ヘッダーの下に影を入れる*/
 }
     /* メッセージ全般のスタイル */
     .bms_message {
@@ -86,11 +92,44 @@
         line-height: 1.3em;
     }
         .bms_left .bms_message_box {
+            position: relative; /*現在の表示位置から相対的に要素の位置を動かす*/
+            display: inline-block;
+            margin: 1.0em 0 1.0em 0;
+            min-width: 120px;
+            max-width: 100%;
             color: #333; /*テキストを黒にする*/
+            font-size: 16px;
             background: #fff;
-            border: 2px solid #13178E;
-            border-radius: 30px 30px 30px 0px; /*上下だけ尖らせてｂ吹き出し感を出す*/
-            margin-right: 50px; /*左側の発言だとわかるように、吹き出しｍ技側に隙間を入れる*/
+            border: solid 3px #053352;
+            box-sizing: border-box;
+            border-radius: 15px; /*吹き出しを丸くする*/
+        }
+
+        .bms_left .bms_message_box:before { /*疑似要素*/
+            content: "";
+            position: absolute; /*親要素を基準に、絶対的な位置を指定する*/
+            top: 50%;
+            left: -24px;
+            margin-top: -12px;
+            border: 12px solid transparent;
+            border-right: 12px solid #fff;
+            z-index: 0; /*要素の重なり順を決めるプロパティ*/
+        }
+
+        .bms_left .bms_message_box:after { /*疑似要素*/
+            content: "";
+            position: absolute; /*親要素を基準に、絶対的な位置を指定する*/
+            top: 50%;
+            left: -30px;
+            margin-top: -14px;
+            border: 14px solid transparent;
+            border-right: 14px solid #053352;
+            z-index: 0; /*要素の重なり順を決めるプロパティ*/
+        }
+
+        .bms_left .bms_message_box p {
+            margin: 0;
+            padding: 0;
         }
 
     /* メッセージ２（右側） */
@@ -99,16 +138,49 @@
         line-height: 1.3em;
     }
         .bms_right .bms_message_box {
+            position: relative; /*現在の表示位置から相対的に要素の位置を動かす*/
+            display: inline-block;
+            margin: 1.0em 15px 1.0em 0;
+            min-width: 120px;
+            max-width: 100%;
             color: #fff; /*テキストを白にする*/
-            background: #13178E;
-            border: 2px solid #13178E;
-            border-radius: 30px 30px 0px 30px; /*右下だけ尖らせて吹き出し感をだす*/
-            margin-left: 50px; /*右側の発言だとわかるように、吹き出しに隙間を入れる*/
-        }
+            font-size: 16px;
+            background: #053352;
+            border: solid 3px #053352;
+            box-sizing: border-box;
+            border-radius: 15px; /*吹き出しを丸くする*/
+            }
+
+         .bms_right .bms_message_box:before { /*疑似要素*/
+            content: "";
+            position: absolute; /*親要素を基準に、絶対的な位置を指定する*/
+            top: 50%;
+            right: -24px;
+            margin-top: -12px;
+            border: 12px solid transparent;
+            border-left: 12px solid #053352;
+            z-index: 2; /*要素の重なり順を決めるプロパティ*/
+            }
+
+        .bms_right .bms_message_box:after { /*疑似要素*/
+            content: "";
+            position: absolute; /*親要素を基準に、絶対的な位置を指定する*/
+            top: 50%;
+            right: -30px;
+            margin-top: -14px;
+            border: 14px solid transparent;
+            border-left: 14px solid #fff;
+            z-index: 1; /*要素の重なり順を決めるプロパティ*/
+            }
+
+        .bms_right .bms_message_box p {
+            margin: 0;
+            padding: 0;
+            }
         
     /* 回り込みを解除 */
     .bms_clear {
-        clear: both; /*左のメッセージと右のメッセージのｍ割り込み(float)の効果の鑑賞を防ぐために必要（これがないと、自分より下のメッセージにfloatが影響する）*/
+        clear: both; /*左のメッセージと右のメッセージの割り込み(float)の効果の鑑賞を防ぐために必要（これがないと、自分より下のメッセージにfloatが影響する）*/
 
     }
 
@@ -148,7 +220,7 @@
         box-sizing: border-box; /**paddingとborderの要素と幅の影響をなくす（要素に高さと幅を含める）*/
     }
     #bms_send_btn:hover {
-        background: #13178E; /*マウスポインタｃを当てた時にアクティブな色になる*/
+        background-color: #053352; /*マウスポインタを当てた時にアクティブな色になる*/
         cursor: pointer; /*マウスポインタを当てたときに、カーソルの色が指の形になる*/
     }
 
