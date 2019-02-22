@@ -52,15 +52,7 @@
     margin: 10px;
     overflow: auto; /*スクロールを効かせつつ、メッセージがタイムラインの外に出ないようにする*/
     height:100%;/*テキストエリアが下に張り付くようにする*/
-    border-right: 1px solid #ddd;
-    border-left: 1px solid #ddd;
-    background: rgba(226,226,226,1);/*以下、各ブラウザ対応仕様で背景をグラデーション化*/
-    background: -moz-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 22%, rgba(95,115,245,1) 49%, rgba(254,254,254,1) 100%);
-    background: -webkit-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 22%, rgba(95,115,245,1) 49%, rgba(254,254,254,1) 100%);
-    background: -o-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 22%, rgba(95,115,245,1) 49%, rgba(254,254,254,1) 100%);
-    background: -ms-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 22%, rgba(95,115,245,1) 49%, rgba(254,254,254,1) 100%);
-    background: linear-gradient(to right, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 22%, rgba(95,115,245,1) 49%, rgba(254,254,254,1) 100%);
-    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2) inset; /*ヘッダーの下に影を入れる*/
+
 }
     /* メッセージ全般のスタイル */
     .bms_message {
@@ -94,7 +86,7 @@
         .bms_left .bms_message_box {
             position: relative; /*現在の表示位置から相対的に要素の位置を動かす*/
             display: inline-block;
-            margin: 1.0em 0 1.0em 0;
+            margin: 0 0 1.0em 0;
             min-width: 120px;
             max-width: 100%;
             color: #333; /*テキストを黒にする*/
@@ -166,7 +158,7 @@
             content: "";
             position: absolute; /*親要素を基準に、絶対的な位置を指定する*/
             top: 50%;
-            right: -30px;
+            right: -31px;
             margin-top: -14px;
             border: 14px solid transparent;
             border-left: 14px solid #fff;
@@ -285,8 +277,18 @@ div#footer {
 
 /* ボディの定義 */
 div#body-bk{
-    padding:80px 0 80px 0;    /* 上下に160pxを余白を取る */
-    background-color: #eee;
+    padding: 100px 0 80px 0;    /* 上下に160pxを余白を取る */
+    /* background-color: #eee; */
+    /* min-height: 100%; */
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    background: rgba(226,226,226,1);/*以下、各ブラウザ対応仕様で背景をグラデーション化*/
+    background: -moz-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 22%, rgba(95,115,245,1) 49%, rgba(254,254,254,1) 100%);
+    background: -webkit-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 22%, rgba(95,115,245,1) 49%, rgba(254,254,254,1) 100%);
+    background: -o-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 22%, rgba(95,115,245,1) 49%, rgba(254,254,254,1) 100%);
+    background: -ms-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 22%, rgba(95,115,245,1) 49%, rgba(254,254,254,1) 100%);
+    background: linear-gradient(to right, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 22%, rgba(95,115,245,1) 49%, rgba(254,254,254,1) 100%);
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2) inset; /*ヘッダーの下に影を入れる*/
 }
  
 div#body{
@@ -294,3 +296,12 @@ div#body{
     margin:auto;
 }
 
+div#body-color{
+    height: 100%;
+    background: rgba(226,226,226,1); /* 以下、各ブラウザ対応仕様で背景をグラデーション化 */
+    background: -moz-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 22%, rgba(95,115,245,1) 49%, rgba(254,254,254,1) 100%);
+    background: -webkit-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 22%, rgba(95,115,245,1) 49%, rgba(254,254,254,1) 100%);
+    background: -o-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 22%, rgba(95,115,245,1) 49%, rgba(254,254,254,1) 100%);
+    background: -ms-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 22%, rgba(95,115,245,1) 49%, rgba(254,254,254,1) 100%);
+    background: linear-gradient(to right, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 22%, rgba(95,115,245,1) 49%, rgba(254,254,254,1) 100%);
+ }

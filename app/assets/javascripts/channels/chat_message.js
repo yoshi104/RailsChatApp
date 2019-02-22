@@ -24,7 +24,7 @@ App.chat = App.cable.subscriptions.create("ChatMessageChannel",{
     // メッセージ送信時に画面下部に自動スクロール（aタグへとばす）
     $('html, body').animate({
         scrollTop: $(document).height()
-      },1500);
+      },100);
 
     return;
 })
@@ -38,7 +38,7 @@ App.chat = App.cable.subscriptions.create("ChatMessageChannel",{
         // メッセージ送信時に画面下部に自動スクロール（aタグへとばす）
         $('html, body').animate({
             scrollTop: $(document).height()
-          },1500);
+          },100);
 
         return;
     }
