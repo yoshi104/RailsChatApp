@@ -113,7 +113,7 @@
             margin-top: -12px;
             border: 12px solid transparent;
             border-right: 12px solid #fff;
-            z-index: 0; /*要素の重なり順を決めるプロパティ*/
+            z-index: 2; /*要素の重なり順を決めるプロパティ*/
         }
 
         .bms_left .bms_message_box:after { /*疑似要素*/
@@ -239,6 +239,7 @@ div#header-fixed
     left: 0px;                  /* 位置(右0px) */
     width: 100%;                /* 横幅100%　*/
     height: 80px;              /* 縦幅140px */
+    z-index: 10;
 }
  
  
@@ -264,6 +265,8 @@ div#footer-fixed
     left: 0px;                  /* 位置(左0px) */
     width: 100%;                /* 横幅100%　*/
     height: 80px;              /* 縦幅140px */
+    z-index: 10;
+    
 }
  
 div#footer-bk
